@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "check-example": {
+      "command": "node /etc/sensu/plugins/example.js",
+      "type": "metric",
+      "subscribers": [
+        "test"
+      ],
+      "interval": 60
+    }
+  }
+}

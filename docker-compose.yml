@@ -1,0 +1,27 @@
+redis:
+  image: redis
+  ports:
+  - "6379:6379"
+  volumes:
+  - ./data/redis:/data
+
+rabbitmq:
+  image: rabbitmq
+  ports:
+  - "5672:5672"
+  - "15672:15672"
+  volumes:
+  - ./data/rabbitmq/log:/data/log
+  - ./data/rabbitmq/mnesia:/data/mnesia
+
+sensu:
+  build: ./sensu
+  ports:
+  - "3000:3000"
+  - "4567:4567"
+  links:
+  - rabbitmq
+  - redis
+  volumes:
+  - ./sensu/conf.d:/etc/sensu/conf.d
+  - ./sensu/plugins:/etc/sensu/plugins

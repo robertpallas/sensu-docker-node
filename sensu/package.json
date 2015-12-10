@@ -1,0 +1,9 @@
+{
+  "name": "node-sensu-plugins",
+  "description": "Sensu plugins example written in Node.js",
+  "main": "index.js",
+  "author": "robert@devtailor.com",
+  "dependencies": {
+    "request": "^2.66.0"
+  }
+}
